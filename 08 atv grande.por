@@ -1,0 +1,83 @@
+programa
+{
+	inclua biblioteca Util --> u
+	inclua biblioteca Matematica
+ --> mat
+	
+	funcao inicio()
+	{
+		const real gravidade = 9.8
+           real tempovoo, distanciapercorrida, desvio
+		cadeia nomeastronauta 
+		caracter clima
+		inteiro combustivel, contador = 5
+		logico lancamento
+
+		escreva (" Digite o nome do astronauta: ")
+		leia (nomeastronauta)
+
+		escreva (" Digite a quantidade do combustivel em porcentagem %: ")
+		leia (combustivel)
+
+          escreva (" Digite o status do clima (digitar 'B' para Bom ou 'R' para Ruim): ")
+		leia (clima)
+
+		//O lançamento só será autorizado se o combustível for maior que 50% E o clima for igual a "B"
+		se (combustivel > 50 e clima == 'B' ou clima == 'b')
+		{
+			escreva (" LANÇAMENTO AUTORIZADO!", " \n") 
+			lancamento = verdadeiro 
+		}
+
+		senao 
+		{
+			escreva (" LANÇAMENTO NAO AUTORIZADO!", "\n", " CAUSA:FALTA DE COMBUSTIVEL OU CLIMA RUIM.")
+			lancamento = falso
+			
+		}
+
+		se (lancamento == verdadeiro)
+		{
+			escreva ( "Contagem regressiva: ")
+			enquanto (contador >= 0)
+			{
+				escreva (contador)
+				u.aguarde (1000)
+				contador --
+				limpa ()
+
+				
+			}
+		
+		}
+
+			escreva (" Digite o tempo de voo (em horas): ")
+			leia(tempovoo)
+
+			distanciapercorrida = (mat.potencia(tempovoo, 2.0)) * gravidade
+
+			desvio = mat.raiz(tempovoo, 2.0)  
+			desvio =  mat.arredondar(desvio,2)
+	
+		escreva("O desvio foi de: "+ desvio)
+
+
+
+
+		
+	
+}
+}
+
+
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 1379; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
