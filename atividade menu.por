@@ -1,0 +1,345 @@
+programa
+{
+	
+	inclua biblioteca Util --> u
+	inclua biblioteca Matematica --> mat
+	inclua biblioteca Texto --> txt
+	
+	funcao inicio()
+	{
+		inteiro opcao
+		real custardFabrica, valorImpostos
+		cadeia continuar
+		
+	
+		faca 
+		{
+			escreva("\n===== MENU =====")
+			escreva("\n1  - Verificar se o número é Par ou Ímpar")
+			escreva("\n2  - Imprimir Tabuada do 3")
+			escreva("\n3  - Imprimir o Resto da Divisão")
+			escreva("\n4  - Imprimir somente Números Pares de uma Sequência")
+			escreva("\n5  - Custo do Carro Novo")
+			escreva("\n6  - Função Substituir da Biblioteca Texto")
+			escreva("\n7  - Implementar a Atividade do Peixe")
+			escreva("\n8  - Verificar a Potência de um Número")
+			escreva("\n9  - Sistema de Avaliação com Pesos")
+			escreva("\n10 - Conversão de Idade")
+			escreva("\n11 - Estatísticas de Times de Futebol")
+			escreva("\n12 - Pesquisa de Preferência de Sabão em Pó")
+			escreva("\n13 - Finalizar")
+			escreva("\n==========================")
+			escreva("\nEscolha uma opção: ")
+			leia(opcao)
+			
+		
+			escolha (opcao)
+			{
+				caso 1:
+					inteiro numParImpar
+					escreva("\nDigite um número: ")
+					leia(numParImpar)
+		
+					verificarParImpar(numParImpar)
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 2:
+					escreva("\n--- Tabuada do 3 ---\n")
+					
+					para (inteiro i = 1; i <= 10; i++)
+					{
+						escreva("3 x ", i, " = ", 3 * i, "\n")
+					}
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 3:
+					inteiro n1, n2
+					escreva("\nDigite o primeiro número: ")
+					leia(n1)
+					escreva("Digite o segundo número: ")
+					leia(n2)
+				
+					imprimirResto(n1, n2)
+
+					escreva("\n\ndigite qualquer letra para prosseguir: ")
+					leia(continuar)
+					pare
+					
+				caso 4:
+					inteiro inicioSeq, fimSeq
+					escreva("\nDigite o valor inicial da sequência: ")
+					leia(inicioSeq)
+					escreva("Digite o valor final da sequência: ")
+					leia(fimSeq)
+					escreva("Números pares no intervalo: ")
+					para (inteiro i = inicioSeq; i <= fimSeq; i++)
+					{
+						se (i % 2 == 0)
+						{
+							escreva(i, " ")
+						}
+					}
+					escreva("\n")
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 5:
+					real custoFabrica, precoFinal, valorRevendedor
+					escreva("\nDigite o custo de fábrica do carro: R$ ")
+					leia(custoFabrica)
+					valorRevendedor = custoFabrica * 0.25
+					valorImpostos = custoFabrica * 0.45
+					precoFinal = custoFabrica + valorRevendedor + valorImpostos
+					escreva("Valor do distribuidor (25%): R$ ", valorRevendedor, "\n")
+					escreva("Valor dos impostos (45%): R$ ", valorImpostos, "\n")
+					escreva("Preço final ao consumidor: R$ ", precoFinal, "\n")
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 6:
+					cadeia textoOriginal, textoAntigo, textoNovo, resultadoTexto
+				
+					limpa()
+					escreva("\nDigite uma frase ou texto: ")
+					leia(textoOriginal)
+					escreva("Digite a palavra que deseja substituir: ")
+					leia(textoAntigo)
+					escreva("Digite a nova palavra: ")
+					leia(textoNovo)
+					
+					resultadoTexto = txt.substituir(textoOriginal, textoAntigo, textoNovo)
+					escreva("Resultado final: ", resultadoTexto, "\n")
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 7:
+					real pesoPeixe, excesso, multa
+					escreva("\nDigite o peso total de peixes (kg): ")
+					leia(pesoPeixe)
+					se (pesoPeixe > 50)
+					{
+						excesso = pesoPeixe - 50
+						multa = excesso * 4.00
+						escreva("Excesso detectado: ", excesso, " kg\n")
+						escreva("Valor da multa a pagar: R$ ", multa, "\n")
+					}
+					senao
+					{
+						escreva("Peso dentro do limite regulamentar. Sem multa.\n")
+					}
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 8:
+					real base, expoente
+					escreva("\nDigite a base: ")
+					leia(base)
+					escreva("Digite o expoente: ")
+					leia(expoente)
+					
+					calcularPotencia(base, expoente)
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 9:
+					real nProva1, nProva2, nProva3, mediaPonderada
+					escreva("\nDigite a nota da Prova 1 (Valor da prova = 6 pontos): ")
+					leia(nProva1)
+					escreva("Digite a nota da Prova 2 (Valor da prova = 10 pontos): ")
+					leia(nProva2)
+					escreva("Digite a nota da Prova 3 (Valor da prova = 14 pontos): ")
+					leia(nProva3)
+				
+					mediaPonderada = calcularMediaPesos(nProva1, nProva2, nProva3)
+					escreva("Média final ponderada do aluno: ", mat.arredondar(mediaPonderada, 2), "\n")
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 10:
+					
+					gerenciarConversaoIdade()
+					pare
+					
+				caso 11:
+					cadeia time, primTime = "", segTime = ""
+					inteiro gols, maiorGols = -1, segundoMaiorGols = -1
+					inteiro totalGols = 0, totalTeams = 0
+					real mediaGols
+					
+					escreva("\nQuantos times deseja registrar para a estatística? ")
+					leia(totalTeams)
+					
+					se (totalTeams > 0)
+					{
+						para(inteiro i = 1; i <= totalTeams; i++)
+						{
+							escreva("Nome do time ", i, ": ")
+							leia(time)
+							escreva("Gols feitos pelo ", time, ": ")
+							leia(gols)
+							
+							totalGols = totalGols + gols
+							
+							
+							se (gols > maiorGols)
+							{
+								segundoMaiorGols = maiorGols
+								segTime = primTime
+								maiorGols = gols
+								primTime = time
+							}
+							senao se (gols > segundoMaiorGols)
+							{
+								segundoMaiorGols = gols
+								segTime = time
+							}
+						}
+						
+						mediaGols = o_real(totalGols) / totalTeams
+						
+						escreva("\na) 1º Lugar: ", primTime, " (", maiorGols, " gols)")
+						escreva("\nb) 2º Lugar: ", segTime, " (", segundoMaiorGols, " gols)")
+						escreva("\nc) Soma de gols de todos os times: ", totalGols)
+						escreva("\nd) Média de gols do campeonato: ", mat.arredondar(mediaGols, 2))
+						escreva("\ne) Situação da média: ")
+						
+						se (mediaGols < 10) { escreva ("Ruim\n" ) }
+						senao se (mediaGols >= 10 e mediaGols <= 19) { escreva("Boa\n") }
+						senao { escreva("Ótima\n") }
+					}
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 12:
+					inteiro totalEntrevistados, voto
+					inteiro omo = 0, tixan = 0, vanish = 0
+					
+					escreva("\nQuantas pessoas responderão à pesquisa de Sabão em Pó? ")
+					leia(totalEntrevistados)
+					
+					se (totalEntrevistados > 0)
+					{
+						para(inteiro i = 1; i <= totalEntrevistados; i++)
+						{
+							escreva("\nEntrevistado ", i, ", escolha sua marca preferida:")
+							escreva("\n1 - Omo dupla ação\n2 - Tixan Ypé\n3 - Vanish\nOpção: ")
+							leia(voto)
+							
+							escolha(voto)
+							{
+								caso 1: omo++ pare
+								caso 2: tixan++ pare
+								caso 3: vanish++ pare
+								caso contrario: escreva("Voto inválido (desconsiderado).\n")
+							}
+						}
+						
+						escreva("\n--- RESULTADO DA PREFERÊNCIA ---")
+						escreva("\na) Omo dupla ação: ", mat.arredondar((o_real(omo) / totalEntrevistados) * 100, 2), "%")
+						escreva("\nb) Tixan Ypé: ", mat.arredondar((o_real(tixan) / totalEntrevistados) * 100, 2), "%")
+						escreva("\nc) Vanish: ", mat.arredondar((o_real(vanish) / totalEntrevistados) * 100, 2), "%\n")
+					}
+					escreva("\n\ndigite qualquer letra para prosseguir")
+					leia(continuar)
+					pare
+					
+				caso 13:
+					escreva("\nPrograma finalizado com sucesso. Obrigado!\n")
+					pare
+					
+				caso contrario:
+					escreva("\nOpção inválida! Escolha um número entre 1 e 13.\n")
+					u.aguarde(1500) 
+			}
+			
+		} enquanto (opcao != 13)
+	}
+	
+
+	funcao verificarParImpar(inteiro n)
+	{
+		se (n % 2 == 0)
+		{
+			escreva("O número ", n, " é PAR.\n")
+		}
+		senao
+		{
+			escreva("O número ", n, " é ÍMPAR.\n")
+		}
+	}
+	
+
+	funcao imprimirResto(inteiro a, inteiro b)
+	{
+		se (b == 0)
+		{
+			escreva("Erro: Divisão por zero não permitida.\n")
+		}
+		senao
+		{
+			escreva("O resto da divisão de ", a, " por ", b, " é: ", a % b, "\n")
+		}
+	}
+	
+
+	funcao calcularPotencia(real b, real c)
+	{
+		real resultado = mat.potencia(b, c)
+		escreva(b, " elevado a ", c, " é igual a: ", resultado, "\n")
+	}
+	
+
+	funcao real calcularMediaPesos(real p1, real p2, real p3)
+	{
+		real resultadoMedia = ((p1 * 2) + (p2 * 4) + (p3 * 6)) / (2 + 4 + 6)
+		retorne resultadoMedia
+	}
+	
+
+	funcao gerenciarConversaoIdade()
+	{
+		inteiro idade, meses, dias
+		faca
+		{
+			escreva("\nDigite a idade (ou 0 para parar): ")
+			leia(idade)
+			
+			se (idade != 0)
+			{
+				meses = idade * 12
+				dias = idade * 365
+				escreva("A sua idade é de: ", idade, " anos, ", meses, " meses, ", dias, " dias.\n")
+			}
+		} enquanto (idade != 0)
+	}
+	
+
+	funcao real o_real(inteiro valor)
+	{
+		retorne valor + 0.0
+	}
+	
+}
+
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 249; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
