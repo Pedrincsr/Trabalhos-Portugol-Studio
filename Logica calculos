@@ -1,0 +1,96 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real num1, num2, resultado
+		inteiro opcao 
+
+
+		
+
+       escreva("Digite a opção da calculadora:\n")
+       
+       escreva("1 - Soma (+)\n")
+       
+       escreva("2 - Subtração (-)\n")
+       
+       escreva("3 - Divisão (/)\n")
+       
+       escreva("4 - Multiplicação (*)\n\n")
+       
+       escreva("Digite a opção: ")
+       leia(opcao)
+
+         escolha(opcao)
+       {
+           caso 1:
+               escreva("\n Digite o primeiro número: ")
+               leia(num1)
+
+               escreva("Digite o segundo número: ")
+               leia(num2)
+
+               resultado = num1 + num2
+
+               escreva("Resultado da soma = ", resultado)
+
+               pare
+
+           caso 2:
+           
+            escreva(" \n Digite o primeiro número: ")
+               leia(num1)
+
+               escreva("Digite o segundo número: ")
+               leia(num2)
+
+               resultado = num1 - num2
+
+               escreva("Resultado da subtração = ", resultado)
+
+               pare
+
+               caso 3: 
+               
+                escreva(" \n Digite o primeiro número: ")
+               leia(num1)
+
+               escreva("Digite o segundo número: ")
+               leia(num2)
+
+               resultado = num1 / num2
+
+               escreva("Resultado da divisão = ", resultado)
+
+               pare
+
+
+               caso 4: 
+                escreva(" \n Digite o primeiro número: ")
+               leia(num1)
+
+               escreva("Digite o segundo número: ")
+               leia(num2)
+
+               resultado = num1 * num2
+
+               escreva("Resultado da multiplicação = ", resultado)
+
+
+               pare
+
+       }
+	}
+}
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 1681; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
